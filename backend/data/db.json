@@ -1,0 +1,1860 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "password123",
+      "role": "admin",
+      "name": "Admin User"
+    }
+  ],
+  "instruments": [
+    {
+      "id": 1,
+      "manufacturer": "Mettler Cross",
+      "model": "MC-3000",
+      "serialNumber": "SN-88213",
+      "instrumentType": "Electronic Platform Scale",
+      "accuracyClass": "III",
+      "maxCapacity": 3000,
+      "verificationScaleInterval": 1,
+      "unit": "g",
+      "temperature": 24,
+      "humidity": 45,
+      "pressure": 1012,
+      "powerSupply": "AC Mains",
+      "createdBy": "admin",
+      "createdAt": "2026-09-01T09:12:00.000Z",
+      "status": "Failed"
+    },
+    {
+      "id": 2,
+      "manufacturer": "Nova Weigh",
+      "model": "NW-500X",
+      "serialNumber": "SN-40217",
+      "instrumentType": "Bench Scale",
+      "accuracyClass": "II",
+      "maxCapacity": 500,
+      "verificationScaleInterval": 0.1,
+      "unit": "g",
+      "temperature": 22,
+      "humidity": 50,
+      "pressure": 1008,
+      "powerSupply": "Battery",
+      "createdBy": "admin",
+      "createdAt": "2026-09-03T11:40:00.000Z",
+      "status": "Passed"
+    },
+    {
+      "id": 3,
+      "manufacturer": "Precision Test Systems",
+      "model": "PTS-5000",
+      "serialNumber": "TEST-PTS-2026-002",
+      "instrumentType": "Electronic Platform Scale",
+      "accuracyClass": "III",
+      "maxCapacity": 5000,
+      "verificationScaleInterval": 2,
+      "unit": "g",
+      "temperature": "23",
+      "humidity": "50",
+      "pressure": "1015",
+      "powerSupply": "AC Mains",
+      "createdBy": "Administrator",
+      "createdAt": "2026-09-08T17:13:28.774Z",
+      "status": "Passed"
+    }
+  ],
+  "tests": [
+    {
+      "id": 1,
+      "instrumentId": 1,
+      "testType": "accuracy",
+      "input": {
+        "testType": "accuracy",
+        "readings": [
+          {
+            "reference": 750,
+            "indicated": 749.98
+          },
+          {
+            "reference": 1500,
+            "indicated": 1500.01
+          },
+          {
+            "reference": 2700,
+            "indicated": 2799.98
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "rows": [
+          {
+            "reference": 750,
+            "indicated": 749.98,
+            "error": -0.02,
+            "mpe": 2,
+            "pass": true
+          },
+          {
+            "reference": 1500,
+            "indicated": 1500.01,
+            "error": 0.01,
+            "mpe": 2,
+            "pass": true
+          },
+          {
+            "reference": 2700,
+            "indicated": 2799.98,
+            "error": 99.98,
+            "mpe": 2.5,
+            "pass": false
+          }
+        ],
+        "pass": false
+      },
+      "result": "FAIL",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T16:40:44.643Z"
+    },
+    {
+      "id": 2,
+      "instrumentId": 1,
+      "testType": "accuracy",
+      "input": {
+        "testType": "accuracy",
+        "readings": [
+          {
+            "reference": 750,
+            "indicated": 749.99
+          },
+          {
+            "reference": 1500,
+            "indicated": 1500.0001
+          },
+          {
+            "reference": 2700,
+            "indicated": 2699.99
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "rows": [
+          {
+            "reference": 750,
+            "indicated": 749.99,
+            "error": -0.01,
+            "mpe": 2,
+            "pass": true
+          },
+          {
+            "reference": 1500,
+            "indicated": 1500.0001,
+            "error": 0.0001,
+            "mpe": 2,
+            "pass": true
+          },
+          {
+            "reference": 2700,
+            "indicated": 2699.99,
+            "error": -0.01,
+            "mpe": 2.5,
+            "pass": true
+          }
+        ],
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:03:53.280Z"
+    },
+    {
+      "id": 3,
+      "instrumentId": 1,
+      "testType": "eccentricity",
+      "input": {
+        "testType": "eccentricity",
+        "load": 1500,
+        "centerReading": 1500,
+        "cornerReadings": [
+          {
+            "label": "Front-Left",
+            "indicated": 1500.001
+          },
+          {
+            "label": "Front-Right",
+            "indicated": 1500.0001
+          },
+          {
+            "label": "Back-Left",
+            "indicated": 1500.001
+          },
+          {
+            "label": "Back-Right",
+            "indicated": 1500.0001
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "corners": [
+          {
+            "label": "Front-Left",
+            "indicated": 1500.001,
+            "deviation": 0.001,
+            "pass": true
+          },
+          {
+            "label": "Front-Right",
+            "indicated": 1500.0001,
+            "deviation": 0.0001,
+            "pass": true
+          },
+          {
+            "label": "Back-Left",
+            "indicated": 1500.001,
+            "deviation": 0.001,
+            "pass": true
+          },
+          {
+            "label": "Back-Right",
+            "indicated": 1500.0001,
+            "deviation": 0.0001,
+            "pass": true
+          }
+        ],
+        "mpe": 2,
+        "maxDeviation": 0.001,
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:04:45.845Z"
+    },
+    {
+      "id": 4,
+      "instrumentId": 1,
+      "testType": "repeatability",
+      "input": {
+        "testType": "repeatability",
+        "load": 1500,
+        "repeats": [
+          {
+            "indicated": 1500
+          },
+          {
+            "indicated": 1500
+          },
+          {
+            "indicated": 1500
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "values": [
+          1500,
+          1500,
+          1500
+        ],
+        "mpe": 2,
+        "range": 0,
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:05:00.475Z"
+    },
+    {
+      "id": 5,
+      "instrumentId": 1,
+      "testType": "temperature",
+      "input": {
+        "testType": "temperature",
+        "load": 1500,
+        "samples": [
+          {
+            "indicated": 1500.001
+          },
+          {
+            "indicated": 1500
+          },
+          {
+            "indicated": 1500.01
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "samples": [
+          {
+            "indicated": 1500.001
+          },
+          {
+            "indicated": 1500
+          },
+          {
+            "indicated": 1500.01
+          }
+        ],
+        "mpe": 2,
+        "drift": 0.01,
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:05:35.647Z"
+    },
+    {
+      "id": 6,
+      "instrumentId": 1,
+      "testType": "accuracy",
+      "input": {
+        "testType": "accuracy",
+        "readings": [
+          {
+            "reference": 750,
+            "indicated": 750
+          },
+          {
+            "reference": 1500,
+            "indicated": 1500
+          },
+          {
+            "reference": 2700,
+            "indicated": 2700
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "rows": [
+          {
+            "reference": 750,
+            "indicated": 750,
+            "error": 0,
+            "mpe": 2,
+            "pass": true
+          },
+          {
+            "reference": 1500,
+            "indicated": 1500,
+            "error": 0,
+            "mpe": 2,
+            "pass": true
+          },
+          {
+            "reference": 2700,
+            "indicated": 2700,
+            "error": 0,
+            "mpe": 2.5,
+            "pass": true
+          }
+        ],
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:07:09.807Z"
+    },
+    {
+      "id": 7,
+      "instrumentId": 2,
+      "testType": "accuracy",
+      "input": {
+        "testType": "accuracy",
+        "readings": [
+          {
+            "reference": 125,
+            "indicated": 125
+          },
+          {
+            "reference": 250,
+            "indicated": 250
+          },
+          {
+            "reference": 450,
+            "indicated": 450
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "rows": [
+          {
+            "reference": 125,
+            "indicated": 125,
+            "error": 0,
+            "mpe": 0.1,
+            "pass": true
+          },
+          {
+            "reference": 250,
+            "indicated": 250,
+            "error": 0,
+            "mpe": 0.1,
+            "pass": true
+          },
+          {
+            "reference": 450,
+            "indicated": 450,
+            "error": 0,
+            "mpe": 0.1,
+            "pass": true
+          }
+        ],
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:08:47.841Z"
+    },
+    {
+      "id": 8,
+      "instrumentId": 2,
+      "testType": "eccentricity",
+      "input": {
+        "testType": "eccentricity",
+        "load": 250,
+        "centerReading": 250,
+        "cornerReadings": [
+          {
+            "label": "Front-Left",
+            "indicated": 250
+          },
+          {
+            "label": "Front-Right",
+            "indicated": 250
+          },
+          {
+            "label": "Back-Left",
+            "indicated": 250
+          },
+          {
+            "label": "Back-Right",
+            "indicated": 250
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "corners": [
+          {
+            "label": "Front-Left",
+            "indicated": 250,
+            "deviation": 0,
+            "pass": true
+          },
+          {
+            "label": "Front-Right",
+            "indicated": 250,
+            "deviation": 0,
+            "pass": true
+          },
+          {
+            "label": "Back-Left",
+            "indicated": 250,
+            "deviation": 0,
+            "pass": true
+          },
+          {
+            "label": "Back-Right",
+            "indicated": 250,
+            "deviation": 0,
+            "pass": true
+          }
+        ],
+        "mpe": 0.1,
+        "maxDeviation": 0,
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:09:29.770Z"
+    },
+    {
+      "id": 9,
+      "instrumentId": 2,
+      "testType": "repeatability",
+      "input": {
+        "testType": "repeatability",
+        "load": 250,
+        "repeats": [
+          {
+            "indicated": 250
+          },
+          {
+            "indicated": 250
+          },
+          {
+            "indicated": 250
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "values": [
+          250,
+          250,
+          250
+        ],
+        "mpe": 0.1,
+        "range": 0,
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:09:50.609Z"
+    },
+    {
+      "id": 10,
+      "instrumentId": 2,
+      "testType": "temperature",
+      "input": {
+        "testType": "temperature",
+        "load": 250,
+        "samples": [
+          {
+            "indicated": 250
+          },
+          {
+            "indicated": 250
+          },
+          {
+            "indicated": 250
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "samples": [
+          {
+            "indicated": 250
+          },
+          {
+            "indicated": 250
+          },
+          {
+            "indicated": 250
+          }
+        ],
+        "mpe": 0.1,
+        "drift": 0,
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:10:01.305Z"
+    },
+    {
+      "id": 11,
+      "instrumentId": 3,
+      "testType": "accuracy",
+      "input": {
+        "testType": "accuracy",
+        "readings": [
+          {
+            "reference": 1250,
+            "indicated": 1250
+          },
+          {
+            "reference": 2500,
+            "indicated": 2502
+          },
+          {
+            "reference": 4500,
+            "indicated": 4498
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "rows": [
+          {
+            "reference": 1250,
+            "indicated": 1250,
+            "error": 0,
+            "mpe": 4,
+            "pass": true
+          },
+          {
+            "reference": 2500,
+            "indicated": 2502,
+            "error": 2,
+            "mpe": 4,
+            "pass": true
+          },
+          {
+            "reference": 4500,
+            "indicated": 4498,
+            "error": -2,
+            "mpe": 5,
+            "pass": true
+          }
+        ],
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:15:11.432Z"
+    },
+    {
+      "id": 12,
+      "instrumentId": 3,
+      "testType": "eccentricity",
+      "input": {
+        "testType": "eccentricity",
+        "load": 2500,
+        "centerReading": 2500,
+        "cornerReadings": [
+          {
+            "label": "Front-Left",
+            "indicated": 2502
+          },
+          {
+            "label": "Front-Right",
+            "indicated": 2498
+          },
+          {
+            "label": "Back-Left",
+            "indicated": 2500
+          },
+          {
+            "label": "Back-Right",
+            "indicated": 2502
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "corners": [
+          {
+            "label": "Front-Left",
+            "indicated": 2502,
+            "deviation": 2,
+            "pass": true
+          },
+          {
+            "label": "Front-Right",
+            "indicated": 2498,
+            "deviation": -2,
+            "pass": true
+          },
+          {
+            "label": "Back-Left",
+            "indicated": 2500,
+            "deviation": 0,
+            "pass": true
+          },
+          {
+            "label": "Back-Right",
+            "indicated": 2502,
+            "deviation": 2,
+            "pass": true
+          }
+        ],
+        "mpe": 4,
+        "maxDeviation": 2,
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:17:12.502Z"
+    },
+    {
+      "id": 13,
+      "instrumentId": 3,
+      "testType": "repeatability",
+      "input": {
+        "testType": "repeatability",
+        "load": 2500,
+        "repeats": [
+          {
+            "indicated": 2500
+          },
+          {
+            "indicated": 2502
+          },
+          {
+            "indicated": 2500
+          },
+          {
+            "indicated": 2498
+          },
+          {
+            "indicated": 2500
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "values": [
+          2500,
+          2502,
+          2500,
+          2498,
+          2500
+        ],
+        "mpe": 4,
+        "range": 4,
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:18:43.559Z"
+    },
+    {
+      "id": 14,
+      "instrumentId": 3,
+      "testType": "temperature",
+      "input": {
+        "testType": "temperature",
+        "load": 2500,
+        "samples": [
+          {
+            "indicated": 2500
+          },
+          {
+            "indicated": 2500
+          },
+          {
+            "indicated": 2500
+          }
+        ],
+        "performedBy": "Administrator"
+      },
+      "evaluation": {
+        "samples": [
+          {
+            "indicated": 2500
+          },
+          {
+            "indicated": 2500
+          },
+          {
+            "indicated": 2500
+          }
+        ],
+        "mpe": 4,
+        "drift": 0,
+        "pass": true
+      },
+      "result": "PASS",
+      "performedBy": "Administrator",
+      "performedAt": "2026-09-08T17:19:08.074Z"
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "reportNumber": "LMR-1001",
+      "instrument": {
+        "id": 1,
+        "manufacturer": "Mettler Cross",
+        "model": "MC-3000",
+        "serialNumber": "SN-88213",
+        "instrumentType": "Electronic Platform Scale",
+        "accuracyClass": "III",
+        "maxCapacity": 3000,
+        "verificationScaleInterval": 1,
+        "unit": "g",
+        "temperature": 24,
+        "humidity": 45,
+        "pressure": 1012,
+        "powerSupply": "AC Mains",
+        "createdBy": "admin",
+        "createdAt": "2026-09-01T09:12:00.000Z",
+        "status": "Failed"
+      },
+      "tests": [
+        {
+          "id": 1,
+          "instrumentId": 1,
+          "testType": "accuracy",
+          "input": {
+            "testType": "accuracy",
+            "readings": [
+              {
+                "reference": 750,
+                "indicated": 749.98
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500.01
+              },
+              {
+                "reference": 2700,
+                "indicated": 2799.98
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "rows": [
+              {
+                "reference": 750,
+                "indicated": 749.98,
+                "error": -0.02,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500.01,
+                "error": 0.01,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 2700,
+                "indicated": 2799.98,
+                "error": 99.98,
+                "mpe": 2.5,
+                "pass": false
+              }
+            ],
+            "pass": false
+          },
+          "result": "FAIL",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T16:40:44.643Z"
+        }
+      ],
+      "overallResult": "FAIL",
+      "generatedBy": "Administrator",
+      "generatedAt": "2026-09-08T16:51:14.307Z"
+    },
+    {
+      "id": 2,
+      "reportNumber": "LMR-1002",
+      "instrument": {
+        "id": 1,
+        "manufacturer": "Mettler Cross",
+        "model": "MC-3000",
+        "serialNumber": "SN-88213",
+        "instrumentType": "Electronic Platform Scale",
+        "accuracyClass": "III",
+        "maxCapacity": 3000,
+        "verificationScaleInterval": 1,
+        "unit": "g",
+        "temperature": 24,
+        "humidity": 45,
+        "pressure": 1012,
+        "powerSupply": "AC Mains",
+        "createdBy": "admin",
+        "createdAt": "2026-09-01T09:12:00.000Z",
+        "status": "Failed"
+      },
+      "tests": [
+        {
+          "id": 1,
+          "instrumentId": 1,
+          "testType": "accuracy",
+          "input": {
+            "testType": "accuracy",
+            "readings": [
+              {
+                "reference": 750,
+                "indicated": 749.98
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500.01
+              },
+              {
+                "reference": 2700,
+                "indicated": 2799.98
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "rows": [
+              {
+                "reference": 750,
+                "indicated": 749.98,
+                "error": -0.02,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500.01,
+                "error": 0.01,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 2700,
+                "indicated": 2799.98,
+                "error": 99.98,
+                "mpe": 2.5,
+                "pass": false
+              }
+            ],
+            "pass": false
+          },
+          "result": "FAIL",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T16:40:44.643Z"
+        },
+        {
+          "id": 2,
+          "instrumentId": 1,
+          "testType": "accuracy",
+          "input": {
+            "testType": "accuracy",
+            "readings": [
+              {
+                "reference": 750,
+                "indicated": 749.99
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500.0001
+              },
+              {
+                "reference": 2700,
+                "indicated": 2699.99
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "rows": [
+              {
+                "reference": 750,
+                "indicated": 749.99,
+                "error": -0.01,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500.0001,
+                "error": 0.0001,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 2700,
+                "indicated": 2699.99,
+                "error": -0.01,
+                "mpe": 2.5,
+                "pass": true
+              }
+            ],
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:03:53.280Z"
+        },
+        {
+          "id": 3,
+          "instrumentId": 1,
+          "testType": "eccentricity",
+          "input": {
+            "testType": "eccentricity",
+            "load": 1500,
+            "centerReading": 1500,
+            "cornerReadings": [
+              {
+                "label": "Front-Left",
+                "indicated": 1500.001
+              },
+              {
+                "label": "Front-Right",
+                "indicated": 1500.0001
+              },
+              {
+                "label": "Back-Left",
+                "indicated": 1500.001
+              },
+              {
+                "label": "Back-Right",
+                "indicated": 1500.0001
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "corners": [
+              {
+                "label": "Front-Left",
+                "indicated": 1500.001,
+                "deviation": 0.001,
+                "pass": true
+              },
+              {
+                "label": "Front-Right",
+                "indicated": 1500.0001,
+                "deviation": 0.0001,
+                "pass": true
+              },
+              {
+                "label": "Back-Left",
+                "indicated": 1500.001,
+                "deviation": 0.001,
+                "pass": true
+              },
+              {
+                "label": "Back-Right",
+                "indicated": 1500.0001,
+                "deviation": 0.0001,
+                "pass": true
+              }
+            ],
+            "mpe": 2,
+            "maxDeviation": 0.001,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:04:45.845Z"
+        },
+        {
+          "id": 4,
+          "instrumentId": 1,
+          "testType": "repeatability",
+          "input": {
+            "testType": "repeatability",
+            "load": 1500,
+            "repeats": [
+              {
+                "indicated": 1500
+              },
+              {
+                "indicated": 1500
+              },
+              {
+                "indicated": 1500
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "values": [
+              1500,
+              1500,
+              1500
+            ],
+            "mpe": 2,
+            "range": 0,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:05:00.475Z"
+        },
+        {
+          "id": 5,
+          "instrumentId": 1,
+          "testType": "temperature",
+          "input": {
+            "testType": "temperature",
+            "load": 1500,
+            "samples": [
+              {
+                "indicated": 1500.001
+              },
+              {
+                "indicated": 1500
+              },
+              {
+                "indicated": 1500.01
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "samples": [
+              {
+                "indicated": 1500.001
+              },
+              {
+                "indicated": 1500
+              },
+              {
+                "indicated": 1500.01
+              }
+            ],
+            "mpe": 2,
+            "drift": 0.01,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:05:35.647Z"
+        }
+      ],
+      "overallResult": "FAIL",
+      "generatedBy": "Administrator",
+      "generatedAt": "2026-09-08T17:05:40.106Z"
+    },
+    {
+      "id": 3,
+      "reportNumber": "LMR-1003",
+      "instrument": {
+        "id": 1,
+        "manufacturer": "Mettler Cross",
+        "model": "MC-3000",
+        "serialNumber": "SN-88213",
+        "instrumentType": "Electronic Platform Scale",
+        "accuracyClass": "III",
+        "maxCapacity": 3000,
+        "verificationScaleInterval": 1,
+        "unit": "g",
+        "temperature": 24,
+        "humidity": 45,
+        "pressure": 1012,
+        "powerSupply": "AC Mains",
+        "createdBy": "admin",
+        "createdAt": "2026-09-01T09:12:00.000Z",
+        "status": "Failed"
+      },
+      "tests": [
+        {
+          "id": 1,
+          "instrumentId": 1,
+          "testType": "accuracy",
+          "input": {
+            "testType": "accuracy",
+            "readings": [
+              {
+                "reference": 750,
+                "indicated": 749.98
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500.01
+              },
+              {
+                "reference": 2700,
+                "indicated": 2799.98
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "rows": [
+              {
+                "reference": 750,
+                "indicated": 749.98,
+                "error": -0.02,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500.01,
+                "error": 0.01,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 2700,
+                "indicated": 2799.98,
+                "error": 99.98,
+                "mpe": 2.5,
+                "pass": false
+              }
+            ],
+            "pass": false
+          },
+          "result": "FAIL",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T16:40:44.643Z"
+        },
+        {
+          "id": 2,
+          "instrumentId": 1,
+          "testType": "accuracy",
+          "input": {
+            "testType": "accuracy",
+            "readings": [
+              {
+                "reference": 750,
+                "indicated": 749.99
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500.0001
+              },
+              {
+                "reference": 2700,
+                "indicated": 2699.99
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "rows": [
+              {
+                "reference": 750,
+                "indicated": 749.99,
+                "error": -0.01,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500.0001,
+                "error": 0.0001,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 2700,
+                "indicated": 2699.99,
+                "error": -0.01,
+                "mpe": 2.5,
+                "pass": true
+              }
+            ],
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:03:53.280Z"
+        },
+        {
+          "id": 3,
+          "instrumentId": 1,
+          "testType": "eccentricity",
+          "input": {
+            "testType": "eccentricity",
+            "load": 1500,
+            "centerReading": 1500,
+            "cornerReadings": [
+              {
+                "label": "Front-Left",
+                "indicated": 1500.001
+              },
+              {
+                "label": "Front-Right",
+                "indicated": 1500.0001
+              },
+              {
+                "label": "Back-Left",
+                "indicated": 1500.001
+              },
+              {
+                "label": "Back-Right",
+                "indicated": 1500.0001
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "corners": [
+              {
+                "label": "Front-Left",
+                "indicated": 1500.001,
+                "deviation": 0.001,
+                "pass": true
+              },
+              {
+                "label": "Front-Right",
+                "indicated": 1500.0001,
+                "deviation": 0.0001,
+                "pass": true
+              },
+              {
+                "label": "Back-Left",
+                "indicated": 1500.001,
+                "deviation": 0.001,
+                "pass": true
+              },
+              {
+                "label": "Back-Right",
+                "indicated": 1500.0001,
+                "deviation": 0.0001,
+                "pass": true
+              }
+            ],
+            "mpe": 2,
+            "maxDeviation": 0.001,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:04:45.845Z"
+        },
+        {
+          "id": 4,
+          "instrumentId": 1,
+          "testType": "repeatability",
+          "input": {
+            "testType": "repeatability",
+            "load": 1500,
+            "repeats": [
+              {
+                "indicated": 1500
+              },
+              {
+                "indicated": 1500
+              },
+              {
+                "indicated": 1500
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "values": [
+              1500,
+              1500,
+              1500
+            ],
+            "mpe": 2,
+            "range": 0,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:05:00.475Z"
+        },
+        {
+          "id": 5,
+          "instrumentId": 1,
+          "testType": "temperature",
+          "input": {
+            "testType": "temperature",
+            "load": 1500,
+            "samples": [
+              {
+                "indicated": 1500.001
+              },
+              {
+                "indicated": 1500
+              },
+              {
+                "indicated": 1500.01
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "samples": [
+              {
+                "indicated": 1500.001
+              },
+              {
+                "indicated": 1500
+              },
+              {
+                "indicated": 1500.01
+              }
+            ],
+            "mpe": 2,
+            "drift": 0.01,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:05:35.647Z"
+        },
+        {
+          "id": 6,
+          "instrumentId": 1,
+          "testType": "accuracy",
+          "input": {
+            "testType": "accuracy",
+            "readings": [
+              {
+                "reference": 750,
+                "indicated": 750
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500
+              },
+              {
+                "reference": 2700,
+                "indicated": 2700
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "rows": [
+              {
+                "reference": 750,
+                "indicated": 750,
+                "error": 0,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 1500,
+                "indicated": 1500,
+                "error": 0,
+                "mpe": 2,
+                "pass": true
+              },
+              {
+                "reference": 2700,
+                "indicated": 2700,
+                "error": 0,
+                "mpe": 2.5,
+                "pass": true
+              }
+            ],
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:07:09.807Z"
+        }
+      ],
+      "overallResult": "FAIL",
+      "generatedBy": "Administrator",
+      "generatedAt": "2026-09-08T17:07:15.019Z"
+    },
+    {
+      "id": 4,
+      "reportNumber": "LMR-1004",
+      "instrument": {
+        "id": 2,
+        "manufacturer": "Nova Weigh",
+        "model": "NW-500X",
+        "serialNumber": "SN-40217",
+        "instrumentType": "Bench Scale",
+        "accuracyClass": "II",
+        "maxCapacity": 500,
+        "verificationScaleInterval": 0.1,
+        "unit": "g",
+        "temperature": 22,
+        "humidity": 50,
+        "pressure": 1008,
+        "powerSupply": "Battery",
+        "createdBy": "admin",
+        "createdAt": "2026-09-03T11:40:00.000Z",
+        "status": "Passed"
+      },
+      "tests": [
+        {
+          "id": 7,
+          "instrumentId": 2,
+          "testType": "accuracy",
+          "input": {
+            "testType": "accuracy",
+            "readings": [
+              {
+                "reference": 125,
+                "indicated": 125
+              },
+              {
+                "reference": 250,
+                "indicated": 250
+              },
+              {
+                "reference": 450,
+                "indicated": 450
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "rows": [
+              {
+                "reference": 125,
+                "indicated": 125,
+                "error": 0,
+                "mpe": 0.1,
+                "pass": true
+              },
+              {
+                "reference": 250,
+                "indicated": 250,
+                "error": 0,
+                "mpe": 0.1,
+                "pass": true
+              },
+              {
+                "reference": 450,
+                "indicated": 450,
+                "error": 0,
+                "mpe": 0.1,
+                "pass": true
+              }
+            ],
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:08:47.841Z"
+        },
+        {
+          "id": 8,
+          "instrumentId": 2,
+          "testType": "eccentricity",
+          "input": {
+            "testType": "eccentricity",
+            "load": 250,
+            "centerReading": 250,
+            "cornerReadings": [
+              {
+                "label": "Front-Left",
+                "indicated": 250
+              },
+              {
+                "label": "Front-Right",
+                "indicated": 250
+              },
+              {
+                "label": "Back-Left",
+                "indicated": 250
+              },
+              {
+                "label": "Back-Right",
+                "indicated": 250
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "corners": [
+              {
+                "label": "Front-Left",
+                "indicated": 250,
+                "deviation": 0,
+                "pass": true
+              },
+              {
+                "label": "Front-Right",
+                "indicated": 250,
+                "deviation": 0,
+                "pass": true
+              },
+              {
+                "label": "Back-Left",
+                "indicated": 250,
+                "deviation": 0,
+                "pass": true
+              },
+              {
+                "label": "Back-Right",
+                "indicated": 250,
+                "deviation": 0,
+                "pass": true
+              }
+            ],
+            "mpe": 0.1,
+            "maxDeviation": 0,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:09:29.770Z"
+        },
+        {
+          "id": 9,
+          "instrumentId": 2,
+          "testType": "repeatability",
+          "input": {
+            "testType": "repeatability",
+            "load": 250,
+            "repeats": [
+              {
+                "indicated": 250
+              },
+              {
+                "indicated": 250
+              },
+              {
+                "indicated": 250
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "values": [
+              250,
+              250,
+              250
+            ],
+            "mpe": 0.1,
+            "range": 0,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:09:50.609Z"
+        },
+        {
+          "id": 10,
+          "instrumentId": 2,
+          "testType": "temperature",
+          "input": {
+            "testType": "temperature",
+            "load": 250,
+            "samples": [
+              {
+                "indicated": 250
+              },
+              {
+                "indicated": 250
+              },
+              {
+                "indicated": 250
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "samples": [
+              {
+                "indicated": 250
+              },
+              {
+                "indicated": 250
+              },
+              {
+                "indicated": 250
+              }
+            ],
+            "mpe": 0.1,
+            "drift": 0,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:10:01.305Z"
+        }
+      ],
+      "overallResult": "PASS",
+      "generatedBy": "Administrator",
+      "generatedAt": "2026-09-08T17:10:03.545Z"
+    },
+    {
+      "id": 5,
+      "reportNumber": "LMR-1005",
+      "instrument": {
+        "id": 3,
+        "manufacturer": "Precision Test Systems",
+        "model": "PTS-5000",
+        "serialNumber": "TEST-PTS-2026-002",
+        "instrumentType": "Electronic Platform Scale",
+        "accuracyClass": "III",
+        "maxCapacity": 5000,
+        "verificationScaleInterval": 2,
+        "unit": "g",
+        "temperature": "23",
+        "humidity": "50",
+        "pressure": "1015",
+        "powerSupply": "AC Mains",
+        "createdBy": "Administrator",
+        "createdAt": "2026-09-08T17:13:28.774Z",
+        "status": "Passed"
+      },
+      "tests": [
+        {
+          "id": 11,
+          "instrumentId": 3,
+          "testType": "accuracy",
+          "input": {
+            "testType": "accuracy",
+            "readings": [
+              {
+                "reference": 1250,
+                "indicated": 1250
+              },
+              {
+                "reference": 2500,
+                "indicated": 2502
+              },
+              {
+                "reference": 4500,
+                "indicated": 4498
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "rows": [
+              {
+                "reference": 1250,
+                "indicated": 1250,
+                "error": 0,
+                "mpe": 4,
+                "pass": true
+              },
+              {
+                "reference": 2500,
+                "indicated": 2502,
+                "error": 2,
+                "mpe": 4,
+                "pass": true
+              },
+              {
+                "reference": 4500,
+                "indicated": 4498,
+                "error": -2,
+                "mpe": 5,
+                "pass": true
+              }
+            ],
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:15:11.432Z"
+        },
+        {
+          "id": 12,
+          "instrumentId": 3,
+          "testType": "eccentricity",
+          "input": {
+            "testType": "eccentricity",
+            "load": 2500,
+            "centerReading": 2500,
+            "cornerReadings": [
+              {
+                "label": "Front-Left",
+                "indicated": 2502
+              },
+              {
+                "label": "Front-Right",
+                "indicated": 2498
+              },
+              {
+                "label": "Back-Left",
+                "indicated": 2500
+              },
+              {
+                "label": "Back-Right",
+                "indicated": 2502
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "corners": [
+              {
+                "label": "Front-Left",
+                "indicated": 2502,
+                "deviation": 2,
+                "pass": true
+              },
+              {
+                "label": "Front-Right",
+                "indicated": 2498,
+                "deviation": -2,
+                "pass": true
+              },
+              {
+                "label": "Back-Left",
+                "indicated": 2500,
+                "deviation": 0,
+                "pass": true
+              },
+              {
+                "label": "Back-Right",
+                "indicated": 2502,
+                "deviation": 2,
+                "pass": true
+              }
+            ],
+            "mpe": 4,
+            "maxDeviation": 2,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:17:12.502Z"
+        },
+        {
+          "id": 13,
+          "instrumentId": 3,
+          "testType": "repeatability",
+          "input": {
+            "testType": "repeatability",
+            "load": 2500,
+            "repeats": [
+              {
+                "indicated": 2500
+              },
+              {
+                "indicated": 2502
+              },
+              {
+                "indicated": 2500
+              },
+              {
+                "indicated": 2498
+              },
+              {
+                "indicated": 2500
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "values": [
+              2500,
+              2502,
+              2500,
+              2498,
+              2500
+            ],
+            "mpe": 4,
+            "range": 4,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:18:43.559Z"
+        },
+        {
+          "id": 14,
+          "instrumentId": 3,
+          "testType": "temperature",
+          "input": {
+            "testType": "temperature",
+            "load": 2500,
+            "samples": [
+              {
+                "indicated": 2500
+              },
+              {
+                "indicated": 2500
+              },
+              {
+                "indicated": 2500
+              }
+            ],
+            "performedBy": "Administrator"
+          },
+          "evaluation": {
+            "samples": [
+              {
+                "indicated": 2500
+              },
+              {
+                "indicated": 2500
+              },
+              {
+                "indicated": 2500
+              }
+            ],
+            "mpe": 4,
+            "drift": 0,
+            "pass": true
+          },
+          "result": "PASS",
+          "performedBy": "Administrator",
+          "performedAt": "2026-09-08T17:19:08.074Z"
+        }
+      ],
+      "overallResult": "PASS",
+      "generatedBy": "Administrator",
+      "generatedAt": "2026-09-08T17:19:09.847Z"
+    }
+  ],
+  "counters": {
+    "report": 1005
+  }
+}
