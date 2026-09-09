@@ -1,4 +1,4 @@
-# MetriLab — Digital Weighing Instrument Compliance Platform
+# LMAR — Digital Weighing Instrument Compliance Platform
 
 A hackathon MVP that digitizes the lab workflow for testing weighing
 instruments: **Login → Dashboard → Register Instrument → Run Tests →
@@ -32,7 +32,7 @@ immediately see which part of the stack each teammate owned, just from
 the file tree:
 
 ```
-metrilab/
+LMAR/
 ├── backend/                     ← BACKEND DEVELOPER(S)
 │   ├── server.js                   HTTP server, routing, REST API
 │   ├── modules/
