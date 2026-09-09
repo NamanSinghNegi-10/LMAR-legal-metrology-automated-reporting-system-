@@ -20,8 +20,7 @@ node backend/server.js
 Then open **http://localhost:4000** in a browser.
 
 Log in with **Demo Login** (one click) or manually with:
-- `technician@metrilab.demo` / `demo123`
-- `reviewer@metrilab.demo` / `demo123`
+- `admin'/'password123'
 
 ---
 
